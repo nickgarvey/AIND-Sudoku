@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: If N cells in a unit have N identical possible values, then no other cell in that unit can have any of those values.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: This increases the number of units from 27 -> 29, but otherwise the technique is the same.
 
 ### Install
 
@@ -40,5 +40,5 @@ The setup is simple.  If you have not installed the client tool already, then yo
 
 To submit your code to the project assistant, run `udacity submit` from within the top-level directory of this project.  You will be prompted for a username and password.  If you login using google or facebook, visit [this link](https://project-assistant.udacity.com/auth_tokens/jwt_login) for alternate login instructions.
 
-This process will create a zipfile in your top-level directory named sudoku-<id>.zip.  This is the file that you should submit to the Udacity reviews system.
+This process will create a zipfile in your top-level directory named `sudoku-<id>.zip`.  This is the file that you should submit to the Udacity reviews system.
 
