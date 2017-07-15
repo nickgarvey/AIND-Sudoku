@@ -1,5 +1,8 @@
 import itertools
 
+# diagonality is implemented by adding two units, see diagonal_units
+ENABLE_DIAGONAL = True
+
 assignments = []
 
 rows = 'ABCDEFGHI'
@@ -9,8 +12,6 @@ def cross(a, b):
     return [s+t for s in a for t in b]
 
 boxes = cross(rows, cols)
-
-ENABLE_DIAGONAL = True
 
 row_units = [cross(r, cols) for r in rows]
 column_units = [cross(rows, c) for c in cols]
@@ -39,13 +40,10 @@ def assign_value(values, box, value):
         assignments.append(values.copy())
     return values
 
-# from itertools docs
-# https://docs.python.org/3/library/itertools.html#itertools-recipes
-def non_duplicate_pairs(iterable):
-    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
-    for i in range(len(iterable)):
-        for j in range(i + 1, len(iterable)):
-            yield iterable[i], iterable[j]
+def non_duplicate_pairs(lst):
+    for i in range(len(lst)):
+        for j in range(i + 1, len(lst)):
+            yield lst[i], lst[j]
 
 def naked_twins(values):
     """Eliminate values using the naked twins strategy.
